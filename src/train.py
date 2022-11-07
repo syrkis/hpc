@@ -3,17 +3,21 @@
 # by: Noah Syrkis
 
 # imports
+import torch
+import torch.nn.functional as F
+
 from tqdm import tqdm
 
 
 # train
-def train(model, loader, optimizer, criterion, epochs):
+def train(model, loader, optimizer, epochs):
     for epoch in range(epochs):
         for x, _ in tqdm(loader):
             # x = x.view(x.shape[0], -1)
             optimizer.zero_grad()
-            x_hat = model(x)
-            loss = criterion(x_hat, x)
+            x_hat, mu, logvar = model(x)
+            kld = -0.5 * torch.sum(1 + logvar - mu.pow(2) - logvar.exp())
+            loss = F.binary_cross_entropy(x_hat, x, reduction='sum') + kld
             loss.backward()
             optimizer.step()
     return model
