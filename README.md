@@ -1,6 +1,8 @@
 # High Performance Cluster (HPC) Demo
 
 This repo demos how to train a PyTorch based neural model on ITU's HPC.
+Specifically we train a variational auto encoder to generate digits.
+
 
 ## Setup
 1. Connect to the ITU network (VPN or WiFi).
