@@ -14,13 +14,16 @@ from torch.utils.data import DataLoader
 def main():
     # create model
     args = get_args()
+    device = "cuda" if torch.cuda.is_available() else 'cpu'
     model = Model(args)
+    model.to(device)
+
 
     if args.train:
         optimizer = optim.Adam(model.parameters(), lr=args.lr)
         data = load_data()
         loader = DataLoader(data, batch_size=args.batch_size, shuffle=True)
-        model = train(model, loader, optimizer, epochs=args.epochs)
+        model = train(model, loader, optimizer, args.epochs, device)
         torch.save(model.state_dict(), 'model.pth')
 
     if args.generate:
