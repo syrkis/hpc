@@ -9,7 +9,8 @@ Specifically we train a variational auto encoder to generate digits.
 2. Log on to the hpc: `ssh username@hpc.itu.dk` (use your ITU username).
 3. Clone this repository into your home folder in the server: `git clone git@github.com:syrkis/hpc.git`.
 4. Change directory into the repo: `cd ./hpc/`.
-5. Create a virutal environment to hold your python dependencies: `virtualenv -p $(which python3) venv`
+5. run `module --ignore-cache load Python/3.7.4-GCCcore-8.3.0`.
+5. Create a virutal environment to hold your python dependencies: `virtualenv venv`
 6. Activate the environment: `source venv/bin/activate`.
 7. Install the requirements: `pip install -r requirements.txt`
 
