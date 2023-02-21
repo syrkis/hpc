@@ -1,3 +1,5 @@
 model.pth
 data/
 **/__pycache__
+.python-version
+**/*.png

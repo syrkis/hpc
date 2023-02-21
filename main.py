@@ -4,7 +4,6 @@
 
 # imports
 from src import Model, train, load_data, get_args, plot
-
 import torch
 from torch import optim, nn
 from torch.utils.data import DataLoader

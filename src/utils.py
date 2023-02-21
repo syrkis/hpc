@@ -43,7 +43,7 @@ def plot(imgs, n):
             spine.set_visible(False)
     # black background
     fig.patch.set_facecolor('black')
-    plt.show()
+    plt.savefig('generated.png')
 
 
 

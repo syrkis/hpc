@@ -12,7 +12,9 @@ from tqdm import tqdm
 # train
 def train(model, loader, optimizer, epochs, device):
     for epoch in range(epochs):
-        for x, _ in tqdm(loader):
+        pbar = tqdm(loader)
+        losses = []
+        for x, _ in pbar:
             x = x.to(device)
             optimizer.zero_grad()
             x_hat, mu, logvar = model(x)
@@ -20,4 +22,6 @@ def train(model, loader, optimizer, epochs, device):
             loss = F.binary_cross_entropy(x_hat, x, reduction='sum') + kld
             loss.backward()
             optimizer.step()
+            losses.append(loss.item())
+            pbar.set_description(f'Epoch {epoch + 1}/{epochs}, Loss: {loss.item():.2f}')
     return model
