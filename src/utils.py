@@ -27,6 +27,7 @@ def get_args():
     parser.add_argument('--lr', type=float, default=0.001)
     parser.add_argument('--train', action='store_true', default=False)
     parser.add_argument('--generate', action='store_true', default=False)
+    parser.add_argument('--parallel', action='store_true', default=False)
     args = parser.parse_args()
     return args
 
