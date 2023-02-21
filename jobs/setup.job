@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#SBATCH --job-name=simple        # Job name
+#SBATCH --output=logs/%j.out     # Name of output file (%j expands to jobId)
+#SBATCH --cpus-per-task=1        # Schedule one core
+#SBATCH --time=02:00:00          # Run time (hh:mm:ss) - run for one hour max
+#SBATCH --partition=brown        # Run on either the Red or Brown queue
+
+# load modules
+module load Python/3.7.4-GCCcore-8.3.0
+module load CUDA/10.2.89-GCC-8.3.0
+
+# make virtual environment
+virtualenv -p $(which python) venv`
+
+# activate venv
+source venv/bin/activate
+
+# install dependencies
+pip install -r requirements.txt
+
+# make folders
+mkdir logs plots models
