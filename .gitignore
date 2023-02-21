@@ -3,6 +3,7 @@ data/
 **/__pycache__
 .python-version
 **/*.png
+**/*.zip
 models
 logs
 plots

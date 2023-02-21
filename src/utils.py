@@ -4,11 +4,8 @@
 
 # imports
 from torchvision import datasets, transforms
-
 import numpy as np
-
 from matplotlib import pyplot as plt
-
 from argparse import ArgumentParser
 
 
@@ -45,15 +42,4 @@ def plot(imgs, n, args):
     # black background
     fig.patch.set_facecolor('black')
     plt.savefig(f'plots/generated_dim_{args.latent_dim}.png')
-
-
-
-
-
-
-
-
-
-
-
 
