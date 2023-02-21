@@ -23,7 +23,9 @@ def main():
         data = load_data()
         loader = DataLoader(data, batch_size=args.batch_size, shuffle=True)
         model = train(model, loader, optimizer, args.epochs, device)
-        torch.save(model.state_dict(), 'model.pth')
+        model = model.to('cpu')
+        torch.save(model.state_dict(), args.save_path)
+
 
     if args.generate:
         model.load_state_dict(torch.load('model.pth'))
