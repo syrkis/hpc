@@ -1,22 +1,25 @@
 # High Performance Cluster (HPC) Demo
 
-This repo demos how to train a PyTorch based neural model on ITU's HPC.
+This repo demos how to train (on GPU) and use (in parallel) a PyTorch based neural model on ITU's HPC.
 Specifically we train a variational auto encoder to generate digits.
 
 
 ## Setup
 1. Connect to the ITU network (VPN or WiFi).
-2. Log on to the hpc: `ssh username@hpc.itu.dk` (use your ITU username).
-3. Clone this repository into your home folder in the server: `git clone git@github.com:syrkis/hpc.git`.
-4. Change directory into the repo: `cd ./hpc/`.
-5. run `module --ignore-cache load Python/3.7.4-GCCcore-8.3.0`.
-5. Create a virutal environment to hold your python dependencies: `virtualenv venv`
-6. Activate the environment: `source venv/bin/activate`.
-7. Install the requirements: `pip install -r requirements.txt`
+2. Log on to the hpc: `ssh [user]@hpc.itu.dk` (use your ITU username) and switch to zsh by running `zsh`.
+3. Make the folders that are expected to be there by my code: `mkdir models plots logs`.
+4. Clone this repository into your home folder in the server: `git clone git@github.com:syrkis/hpc.git hpc`.
+5. Change directory into the repo: `cd ./hpc/`.
+6. Install the python dependencies we use in this example: `sbatch jobs/setup.job` (this will take a while as it installs python deps.).
+7. You can monitor progress using `logs/[job_id].log`.
+
 
 ## Usage
-Now you have a remote copy of your repo on the server, and we've installed all the dependencies you need.
-To run a job type `sbatch jobs/gpu.job`.
-The top of the file specifies the clutser settings with which the job should be run.
-Next we load some libraries we need, beforre activating the python venv, and then calling the python script.
-Remember, the job does *not* run on the machine that you've logged in to.
+Documentation for the cluster is avaiable at hpc.itu.dk (when you are connected to the network).
+In actually run a job on the cluster, you must call a job file with `sbatch` (as we did with setup).
+The job files initially specify the cluster configurations, after which the commands below are run consecutively.
+In the case of `jobs/gpu.job` we first declare that we want to use a gpu (among other specs).
+Then we load in our version of Python and CUDA, activate out environment and call `main.py`.
+
+To see what jobs are currently runnning, run `sbatch`. To cancel a job run `scancel [jobid]`.
+That pretty much it. You can also 
