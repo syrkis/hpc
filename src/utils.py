@@ -28,7 +28,7 @@ def get_args():
     args = parser.parse_args()
     return args
 
-def plot(imgs, n, args):
+def plot(imgs, n, latent_dim):
     imgs = 1 - imgs
     dim = int(np.sqrt(n))
     fig, axes = plt.subplots(dim, dim, figsize=(8, 8))
@@ -41,5 +41,5 @@ def plot(imgs, n, args):
             spine.set_visible(False)
     # black background
     fig.patch.set_facecolor('black')
-    plt.savefig(f'plots/generated_dim_{args.latent_dim}.png')
+    plt.savefig(f'plots/generated_dim_{latent_dim}.png')
 

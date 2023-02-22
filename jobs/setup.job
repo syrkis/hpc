@@ -9,15 +9,6 @@
 # load modules
 module load Python/3.7.4-GCCcore-8.3.0
 module load CUDA/10.2.89-GCC-8.3.0
-
-# make virtual environment
-virtualenv -p $(which python) venv`
-
-# activate venv
+virtualenv -p $(which python) venv
 source venv/bin/activate
-
-# install dependencies
 pip install -r requirements.txt
-
-# make folders
-mkdir logs plots models

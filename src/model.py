@@ -9,14 +9,14 @@ import torch.nn as nn
 
 # VAE model
 class Model(nn.Module):
-    def __init__(self, args):
+    def __init__(self, latent_dim):
         super(Model, self).__init__()
         self.conv1 = nn.Conv2d(1, 8, 3, 1)
         self.conv2 = nn.Conv2d(8, 16, 3, 1)
         self.fc1 = nn.Linear(9216, 128)
-        self.fc21 = nn.Linear(128, args.latent_dim)
-        self.fc22 = nn.Linear(128, args.latent_dim)
-        self.fc3 = nn.Linear(args.latent_dim, 128)
+        self.fc21 = nn.Linear(128, latent_dim)
+        self.fc22 = nn.Linear(128, latent_dim)
+        self.fc3 = nn.Linear(latent_dim, 128)
         self.fc4 = nn.Linear(128, 9216)
         self.deconv1 = nn.ConvTranspose2d(16, 8, 3, 1)
         self.deconv2 = nn.ConvTranspose2d(8, 1, 3, 1)
