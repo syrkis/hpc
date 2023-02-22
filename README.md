@@ -6,11 +6,11 @@ Specifically we train a variational auto encoder to generate digits.
 
 ## Setup
 1. Connect to the ITU network (VPN or WiFi).
-2. Log on to the hpc: `ssh [user]@hpc.itu.dk` (use your ITU username) and switch to zsh by running `zsh`.
+2. Log on to the hpc: `ssh [user]@hpc.itu.dk` (use your ITU username).
 3. Make the folders that are expected to be there by my code: `mkdir models plots logs`.
 4. Clone this repository into your home folder in the server: `git clone git@github.com:syrkis/hpc.git hpc`.
 5. Change directory into the repo: `cd ./hpc/`.
-6. Install the python dependencies we use in this example: `sbatch jobs/setup.job` (this will take a while as it installs python deps.).
+6. Install the python dependencies we use in this example: `sbatch jobs/setup.job` (takes a long time).
 7. You can monitor progress using `logs/[job_id].log`.
 
 
