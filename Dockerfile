@@ -10,10 +10,10 @@ RUN apt-get update && \
 
 RUN apt-get update && \
     apt-get install -y \
-    python3.10 python3.11-distutils python3.10-dev libcupti-dev
+    python3.11 python3.11-distutils python3.11-dev libcupti-dev
 
-RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.10 1
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.11 1
 
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
-    python3.10 get-pip.py --force-reinstall && \
+    python3.11 get-pip.py --force-reinstall && \
     rm -rf /var/lib/apt/lists/*
