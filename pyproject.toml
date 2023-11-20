@@ -16,6 +16,7 @@ seaborn = "^0.13.0"
 networkx = "^3.2.1"
 numpy = "^1.26.2"
 jupyterlab = "^4.0.9"
+jupyter = "^1.0.0"
 
 
 [build-system]
