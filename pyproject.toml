@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "hpc"
+version = "0.1.0"
+description = ""
+authors = ["Noah Syrkis <noah@syrkis.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+jax = "^0.4.20"
+brax = "^0.9.3"
+optax = "^0.1.7"
+evojax = "^0.2.16"
+evosax = "^0.1.5"
+seaborn = "^0.13.0"
+networkx = "^3.2.1"
+numpy = "^1.26.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
