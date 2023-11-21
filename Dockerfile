@@ -21,3 +21,4 @@ RUN python3.11 -m pip install -r requirements.txt
 RUN python3.11 -m pip install --upgrade "jax[cuda11_pip]" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
 
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.11 1
+
