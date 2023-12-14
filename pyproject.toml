@@ -26,6 +26,9 @@ nilearn = "^0.10.2"
 mujoco-mjx = "^3.0.1"
 mujoco = "^3.0.1"
 darkdetect = "^0.8.0"
+opencv-python = "^4.8.1.78"
+tfds-nightly = "^4.9.3.dev202312070044"
+scikit-learn = "^1.3.2"
 
 
 [build-system]
