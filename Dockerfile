@@ -9,7 +9,7 @@ RUN apt-get update && \
     add-apt-repository ppa:deadsnakes/ppa
 
 RUN apt-get update && \
-    apt-get install -y python3.11 python3.11-distutils libglfw3-dev
+    apt-get install -y python3.11 python3.11-distutils libglfw3-dev git
 
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
     python3.11 get-pip.py --force-reinstall && \ 
@@ -25,7 +25,7 @@ ENV PYGLFW_PREVIEW=1
 
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.11 1
 
-RUN git clone git@github.com:syrkis/syrkis.git
+RUN git clone https://github.com:syrkis/syrkis.git
 
 RUN cd syrkis && \
     python3.11 -m pip install -e .
