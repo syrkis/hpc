@@ -25,7 +25,7 @@ ENV PYGLFW_PREVIEW=1
 
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.11 1
 
-COPY ~/code/syrkis syrkis
+RUN git clone git@github.com:syrkis/syrkis.git
 
 RUN cd syrkis && \
     python3.11 -m pip install -e .
