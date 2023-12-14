@@ -278,6 +278,9 @@ contourpy==1.2.0 ; python_version >= "3.11" and python_version < "4.0" \
 cycler==0.12.1 ; python_version >= "3.11" and python_version < "4.0" \
     --hash=sha256:85cef7cff222d8644161529808465972e51340599459b8ac3ccbac5a854e0d30 \
     --hash=sha256:88bb128f02ba341da8ef447245a9e138fae777f6a23943da4540077d3601eb1c
+darkdetect==0.8.0 ; python_version >= "3.11" and python_version < "4.0" \
+    --hash=sha256:a7509ccf517eaad92b31c214f593dbcf138ea8a43b2935406bbd565e15527a85 \
+    --hash=sha256:b5428e1170263eb5dea44c25dc3895edd75e6f52300986353cd63533fe7df8b1
 debugpy==1.8.0 ; python_version >= "3.11" and python_version < "4.0" \
     --hash=sha256:125b9a637e013f9faac0a3d6a82bd17c8b5d2c875fb6b7e2772c5aba6d082332 \
     --hash=sha256:12af2c55b419521e33d5fb21bd022df0b5eb267c3e178f1d374a63a2a6bdccd0 \
