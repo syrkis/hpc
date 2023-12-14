@@ -21,11 +21,12 @@ RUN python3.11 -m pip install -r requirements.txt
 
 RUN python3.11 -m pip install --upgrade "jax[cuda11_pip]" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
 
-ENV PYGLFW_PREVIEW=1
-
-RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.11 1
+RUN python3.11 -m pip install tensorflow_datasets opencv-python
 
 RUN git clone https://github.com/syrkis/syrkis.git
 
-RUN cd syrkis && \
-    python3.11 -m pip install -e .
+RUN python3.11 -m pip install -e syrkis
+
+ENV PYGLFW_PREVIEW=1
+
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.11 1
