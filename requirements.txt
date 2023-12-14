@@ -983,6 +983,9 @@ msgpack==1.0.7 ; python_version >= "3.11" and python_version < "4.0" \
     --hash=sha256:f6ffbc252eb0d229aeb2f9ad051200668fc3a9aaa8994e49f0cb2ffe2b7867e7 \
     --hash=sha256:f9a7c509542db4eceed3dcf21ee5267ab565a83555c9b88a8109dcecc4709002 \
     --hash=sha256:ff1d0899f104f3921d94579a5638847f783c9b04f2d5f229392ca77fba5b82fc
+mujoco-mjx==3.0.1 ; python_version >= "3.11" and python_version < "4.0" \
+    --hash=sha256:0d9a34f7ef5a4b328f2ac1fbf985cd35699353d83fedb1e46b244d4ece83d50d \
+    --hash=sha256:9861598ebe8dc560db9fa6b3fe74dbe9ef840e542e9b7074bcd23861b2807904
 mujoco==3.0.1 ; python_version >= "3.11" and python_version < "4.0" \
     --hash=sha256:01107d7b75798042077a7581e5217f4bc735d5cdb3db6068a982bbf7e3480ab4 \
     --hash=sha256:16a6515994623857cd6cf119c0f75db4deb9aaa7c368978d0ba7465f037f058c \

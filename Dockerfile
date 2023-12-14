@@ -1,6 +1,6 @@
 FROM nvidia/cuda:11.1.1-cudnn8-devel-ubuntu20.04
 
-WORKDIR /workspace 
+WORKDIR /workspace
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -24,3 +24,8 @@ RUN python3.11 -m pip install --upgrade "jax[cuda11_pip]" -f https://storage.goo
 ENV PYGLFW_PREVIEW=1
 
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.11 1
+
+RUN git clone https://github.com/syrkis/syrkis.git
+
+RUN cd syrkis && \
+    python3.11 -m pip install -e .
