@@ -29,4 +29,6 @@ RUN python3.11 -m pip install -e syrkis
 
 ENV PYGLFW_PREVIEW=1
 
+RUN curl https://ollama.ai/install.sh | sh
+
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.11 1
